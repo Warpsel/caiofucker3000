@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>CaioFucker3000</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body { background: #111; color: white; font-family: sans-serif; text-align: center; padding: 40px; }
+    button, select { font-size: 1rem; padding: 10px 20px; margin: 10px; border-radius: 8px; border: none; }
+    #output { margin-top: 30px; font-size: 1.2rem; background: #222; padding: 20px; border-radius: 10px; max-width: 700px; margin-left: auto; margin-right: auto; }
+  </style>
+</head>
+<body>
+  <h1>CaioFucker3000 - Gerador de Ofensas com IA</h1>
+  <button onclick="gerar()">GERAR COM IA</button>
+  <div id="output">Clique no botão pra destruir o psicológico do Caio.</div>
+
+  <script>
+    async function gerar() {
+      const res = await fetch("/gerar", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({}) // Sem tema
+      });
+      const data = await res.json();
+      document.getElementById("output").innerText = data.mensagem;
+    }
+  </script>
+</body>
+</html>
